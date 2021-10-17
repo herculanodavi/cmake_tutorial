@@ -1,5 +1,10 @@
 #!/bin/bash
-cmake -Bbuild
+printf "\n\nConfiguring...\n\n"
+
+cmake -Bbuild $@
+
+printf "\n\nBuilding...\n\n"
+
 make -Cbuild
 
 printf "\n\nExecuting binary...\n\n"
