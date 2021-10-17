@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 // a hack square root calculation using simple operations
 double mysqrt(double x)
@@ -15,8 +16,10 @@ double mysqrt(double x)
       result = 0.1;
     }
     double delta = x - (result * result);
+#if defined(HAVE_LOG) && defined(HAVE_EXP)
     result = result + 0.5 * delta / result;
     std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
+#else
   }
   return result;
 }
